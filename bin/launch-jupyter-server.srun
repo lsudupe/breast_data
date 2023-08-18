@@ -2,8 +2,8 @@
 
 # setup the environment
 module purge
-ENV_PREFIX="$PROJECT_DIR"/env
-conda activate $ENV_PREFIX
+
+conda activate /ibex/scratch/medinils/breast_data/env
 
 # setup ssh tunneling 
 IBEX_COMPUTE_NODE=$(hostname -s) 
@@ -19,6 +19,9 @@ ssh -L ${JUPYTER_PORT}:${IBEX_COMPUTE_NODE}:${JUPYTER_PORT} ${USER}@ilogin.ibex.
 Next, you need to copy the second url provided below and paste it into the browser 
 on your local machine.
 " >&2
+
+# Specify the directory where Jupyter should start
+NOTEBOOK_DIR="/ibex/scratch/medinils/breast_data"
 
 # launch jupyter server
 jupyter ${1:-lab} --no-browser --port=${JUPYTER_PORT} --ip=${IBEX_COMPUTE_NODE}
