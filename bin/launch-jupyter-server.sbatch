@@ -1,8 +1,7 @@
 #!/bin/bash --login
-#SBATCH --time 6:00:00
+#SBATCH --time 5:00:00
 #SBATCH --cpus-per-task=4  
-#SBATCH --mem-per-cpu=16G
-#SBATCH --partition=debug 
+#SBATCH --mem-per-cpu=100G 
 #SBATCH --job-name=launch-jupyter-server
 #SBATCH --mail-type=ALL
 #SBATCH --output=bin/%x-%j-slurm.out
