@@ -1,0 +1,179 @@
+/ibex/scratch/medinils/breast_data/bin/launch-jupyter-server.srun: line 7: S: command not found
+
+To connect to the compute node  on Ibex running your Jupyter server, 
+you need to create an ssh tunnel from your local machine to login node on Ibex 
+using the following command.
+
+ssh -L 12567:cn506-15-r:12567 medinils@ilogin.ibex.kaust.edu.sa 
+
+Next, you need to copy the second url provided below and paste it into the browser 
+on your local machine.
+
+[I 2023-08-22 10:02:20.059 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2023-08-22 10:02:30.904 ServerApp] Package dask_labextension took 10.8435s to import
+[W 2023-08-22 10:02:30.904 ServerApp] A `_jupyter_server_extension_points` function was not found in dask_labextension. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:02:31.415 ServerApp] Package jupyter_lsp took 0.5111s to import
+[W 2023-08-22 10:02:31.415 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:02:31.469 ServerApp] Package jupyter_server_fileid took 0.0530s to import
+[I 2023-08-22 10:02:31.534 ServerApp] Package jupyter_server_mathjax took 0.0639s to import
+[I 2023-08-22 10:02:31.534 ServerApp] Package jupyter_server_proxy took 0.0000s to import
+[I 2023-08-22 10:02:31.763 ServerApp] Package jupyter_server_terminals took 0.2284s to import
+[I 2023-08-22 10:02:33.384 ServerApp] Package jupyter_server_ydoc took 1.6199s to import
+[I 2023-08-22 10:02:34.178 ServerApp] Package jupyterlab_git took 0.7939s to import
+[I 2023-08-22 10:02:34.179 ServerApp] Package nbclassic took 0.0000s to import
+[W 2023-08-22 10:02:34.248 ServerApp] A `_jupyter_server_extension_points` function was not found in nbclassic. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:02:34.249 ServerApp] Package nbdime took 0.0000s to import
+[I 2023-08-22 10:02:34.249 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2023-08-22 10:02:34.249 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:02:53.591 ServerApp] Package panel.io.jupyter_server_extension took 19.3341s to import
+[I 2023-08-22 10:02:53.592 ServerApp] dask_labextension | extension was successfully linked.
+[I 2023-08-22 10:02:53.592 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2023-08-22 10:02:53.722 ServerApp] jupyter_server_fileid | extension was successfully linked.
+[I 2023-08-22 10:02:53.841 ServerApp] jupyter_server_mathjax | extension was successfully linked.
+[I 2023-08-22 10:02:53.841 ServerApp] jupyter_server_proxy | extension was successfully linked.
+[I 2023-08-22 10:02:53.971 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2023-08-22 10:02:54.098 ServerApp] jupyter_server_ydoc | extension was successfully linked.
+[I 2023-08-22 10:02:54.224 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-08-22 10:02:54.224 ServerApp] jupyterlab_git | extension was successfully linked.
+[I 2023-08-22 10:02:54.341 ServerApp] nbclassic | extension was successfully linked.
+[I 2023-08-22 10:02:54.341 ServerApp] nbdime | extension was successfully linked.
+[I 2023-08-22 10:03:01.445 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-08-22 10:03:01.446 ServerApp] panel.io.jupyter_server_extension | extension was successfully linked.
+[I 2023-08-22 10:03:04.071 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-08-22 10:03:04.073 ServerApp] dask_labextension | extension was successfully loaded.
+[I 2023-08-22 10:03:04.091 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2023-08-22 10:03:04.092 FileIdExtension] Configured File ID manager: ArbitraryFileIdManager
+[I 2023-08-22 10:03:04.092 FileIdExtension] ArbitraryFileIdManager : Configured root dir: /ibex/scratch/medinils/breast_data
+[I 2023-08-22 10:03:04.092 FileIdExtension] ArbitraryFileIdManager : Configured database path: /home/medinils/.local/share/jupyter/file_id_manager.db
+[I 2023-08-22 10:03:04.096 FileIdExtension] ArbitraryFileIdManager : Successfully connected to database file.
+[I 2023-08-22 10:03:04.096 FileIdExtension] ArbitraryFileIdManager : Creating File ID tables and indices with journal_mode = DELETE
+[I 2023-08-22 10:03:04.098 FileIdExtension] Attached event listeners.
+[I 2023-08-22 10:03:04.099 ServerApp] jupyter_server_fileid | extension was successfully loaded.
+[I 2023-08-22 10:03:04.099 ServerApp] jupyter_server_mathjax | extension was successfully loaded.
+[I 2023-08-22 10:03:05.314 ServerApp] jupyter_server_proxy | extension was successfully loaded.
+[I 2023-08-22 10:03:05.322 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2023-08-22 10:03:05.323 ServerApp] jupyter_server_ydoc | extension was successfully loaded.
+[I 2023-08-22 10:03:05.616 LabApp] JupyterLab extension loaded from /ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/jupyterlab
+[I 2023-08-22 10:03:05.616 LabApp] JupyterLab application directory is /ibex/scratch/medinils/breast_data/env/share/jupyter/lab
+[I 2023-08-22 10:03:05.639 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-08-22 10:03:05.649 ServerApp] jupyterlab_git | extension was successfully loaded.
+[I 2023-08-22 10:03:05.835 ServerApp] nbclassic | extension was successfully loaded.
+[I 2023-08-22 10:03:07.474 ServerApp] nbdime | extension was successfully loaded.
+[I 2023-08-22 10:03:07.476 ServerApp] panel.io.jupyter_server_extension | extension was successfully loaded.
+[I 2023-08-22 10:03:07.477 ServerApp] Serving notebooks from local directory: /ibex/scratch/medinils/breast_data
+[I 2023-08-22 10:03:07.477 ServerApp] Jupyter Server 2.7.1 is running at:
+[I 2023-08-22 10:03:07.477 ServerApp] http://cn506-15-r:12567/lab?token=2a8bd3b5acb612b1bc7bc94baf7af9866d7491ec5b630c21
+[I 2023-08-22 10:03:07.477 ServerApp]     http://127.0.0.1:12567/lab?token=2a8bd3b5acb612b1bc7bc94baf7af9866d7491ec5b630c21
+[I 2023-08-22 10:03:07.477 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2023-08-22 10:03:07.495 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/medinils/.local/share/jupyter/runtime/jpserver-225380-open.html
+    Or copy and paste one of these URLs:
+        http://cn506-15-r:12567/lab?token=2a8bd3b5acb612b1bc7bc94baf7af9866d7491ec5b630c21
+        http://127.0.0.1:12567/lab?token=2a8bd3b5acb612b1bc7bc94baf7af9866d7491ec5b630c21
+[I 2023-08-22 10:03:10.857 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2023-08-22 10:03:52.545 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2023-08-22 10:04:05.027 ServerApp] Kernel started: 016300c0-558b-4093-99f9-2b7f867b26f3
+[XPythonShellApp] WARNING | Unrecognized alias: 'f', it will have no effect.
+[I 2023-08-22 10:04:18.586 ServerApp] Connecting to kernel 016300c0-558b-4093-99f9-2b7f867b26f3.
+[I 2023-08-22 10:04:19.348 ServerApp] Connecting to kernel 016300c0-558b-4093-99f9-2b7f867b26f3.
+ERROR: received bad message: No such comm registered: 6941ae72-32ae-4e0b-98a4-2245515b97a0
+Message type: comm_msg
+[I 2023-08-22 10:04:20.094 ServerApp] Connecting to kernel 016300c0-558b-4093-99f9-2b7f867b26f3.
+[I 2023-08-22 10:06:04.603 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:08:06.063 ServerApp] Saving file at /notebooks/challenge.ipynb
+Error: signal 11:
+/ibex/scratch/medinils/breast_data/env/bin/../lib/libxeus-python.so.0(_ZN4xpyt15sigsegv_handlerEi+0x2b)[0x2b419acc224b]
+/lib64/libc.so.6(+0x36400)[0x2b419b655400]
+/ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so(+0x1b081d5)[0x2b420a8911d5]
+/ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so(_ZN3c106detail12infer_schema20make_function_schemaEOSsS2_NS_8ArrayRefINS1_11ArgumentDefEEES5_+0x43)[0x2b420a891733]
+/ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so(_ZN3c106detail12infer_schema20make_function_schemaENS_8ArrayRefINS1_11ArgumentDefEEES4_+0x6d)[0x2b420a891c0d]
+/ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/torch_cluster/_version_cpu.so(_ZNO3c1017RegisterOperators2opIFlvEEENSt9enable_ifIXaasrNS_4guts16is_function_typeIT_EE5valuentsrSt7is_sameIS6_FvRKNS_14OperatorHandleEPSt6vectorINS_6IValueESaISD_EEEE5valueEOS0_E4typeERKSsPS6_ONS0_7OptionsE+0x60)[0x2b426dedc610]
+/ibex/scratch/medinils/breast_data/env/lib/python3.8/site-packages/torch_cluster/_version_cpu.so(+0x3ce2)[0x2b426ded7ce2]
+/lib64/ld-linux-x86-64.so.2(+0xf9c3)[0x2b419ac159c3]
+/lib64/ld-linux-x86-64.so.2(+0x1459e)[0x2b419ac1a59e]
+/lib64/ld-linux-x86-64.so.2(+0xf7d4)[0x2b419ac157d4]
+[I 2023-08-22 10:08:29.004 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 10:08:29.004 ServerApp] kernel 016300c0-558b-4093-99f9-2b7f867b26f3 restarted
+[W 2023-08-22 10:08:29.004 ServerApp] kernel 016300c0-558b-4093-99f9-2b7f867b26f3 restarted
+[I 2023-08-22 10:08:29.396 ServerApp] Starting buffering for 016300c0-558b-4093-99f9-2b7f867b26f3:9f155f9a-0d1b-4468-b6d7-ee99084cb356
+[I 2023-08-22 10:08:29.769 ServerApp] Connecting to kernel 016300c0-558b-4093-99f9-2b7f867b26f3.
+[I 2023-08-22 10:08:30.525 ServerApp] Connecting to kernel 016300c0-558b-4093-99f9-2b7f867b26f3.
+[XPythonShellApp] WARNING | Unrecognized alias: 'f', it will have no effect.
+ERROR: received bad message: No such comm registered: d09f5ece-45cd-429a-aafb-af9abca2dff0
+Message type: comm_msg
+[I 2023-08-22 10:10:07.141 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:11:33.466 ServerApp] Kernel started: cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[I 2023-08-22 10:11:33.467 ServerApp] Kernel shutdown: 016300c0-558b-4093-99f9-2b7f867b26f3
+ERROR: Signatures don't match[I 2023-08-22 10:12:05.273 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:12:06.023 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:12:06.775 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:12:08.293 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:12:42.445 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 10:12:42.445 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[W 2023-08-22 10:12:42.446 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[W 2023-08-22 10:12:42.446 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[I 2023-08-22 10:12:42.820 ServerApp] Starting buffering for cbf8233c-1078-4c2d-a3a8-a93f19b657c8:07d3e83f-02ba-49ca-8143-d117d5e2f1a6
+[I 2023-08-22 10:12:43.205 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:12:43.968 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:12:44.723 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[W 2023-08-22 10:12:47.721 ServerApp] Nudge: attempt 10 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:48.481 ServerApp] Nudge: attempt 10 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:49.236 ServerApp] Nudge: attempt 10 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:52.731 ServerApp] Nudge: attempt 20 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:53.492 ServerApp] Nudge: attempt 20 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:54.246 ServerApp] Nudge: attempt 20 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:57.743 ServerApp] Nudge: attempt 30 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:58.506 ServerApp] Nudge: attempt 30 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:12:59.258 ServerApp] Nudge: attempt 30 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:02.758 ServerApp] Nudge: attempt 40 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:03.580 ServerApp] Nudge: attempt 40 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:04.273 ServerApp] Nudge: attempt 40 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:07.768 ServerApp] Nudge: attempt 50 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:08.595 ServerApp] Nudge: attempt 50 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:09.287 ServerApp] Nudge: attempt 50 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:12.781 ServerApp] Nudge: attempt 60 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:13.619 ServerApp] Nudge: attempt 60 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:13:14.301 ServerApp] Nudge: attempt 60 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[I 2023-08-22 10:13:54.486 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 10:13:54.487 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[W 2023-08-22 10:13:54.487 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[I 2023-08-22 10:13:54.862 ServerApp] Starting buffering for cbf8233c-1078-4c2d-a3a8-a93f19b657c8:9f155f9a-0d1b-4468-b6d7-ee99084cb356
+[I 2023-08-22 10:13:55.271 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:13:56.027 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[W 2023-08-22 10:13:59.784 ServerApp] Nudge: attempt 10 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:00.542 ServerApp] Nudge: attempt 10 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:04.797 ServerApp] Nudge: attempt 20 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:05.556 ServerApp] Nudge: attempt 20 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[I 2023-08-22 10:14:09.446 ServerApp] Saving file at /notebooks/challenge.ipynb
+[W 2023-08-22 10:14:09.811 ServerApp] Nudge: attempt 30 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:10.653 ServerApp] Nudge: attempt 30 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:14.825 ServerApp] Nudge: attempt 40 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:15.669 ServerApp] Nudge: attempt 40 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:19.844 ServerApp] Nudge: attempt 50 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:20.683 ServerApp] Nudge: attempt 50 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:24.860 ServerApp] Nudge: attempt 60 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[W 2023-08-22 10:14:25.698 ServerApp] Nudge: attempt 60 on kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8
+[I 2023-08-22 10:16:10.517 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:16:24.529 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 10:16:24.530 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[W 2023-08-22 10:16:24.530 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[I 2023-08-22 10:16:24.913 ServerApp] Starting buffering for cbf8233c-1078-4c2d-a3a8-a93f19b657c8:9f155f9a-0d1b-4468-b6d7-ee99084cb356
+[I 2023-08-22 10:16:25.311 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:16:26.095 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:18:12.003 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:20:13.551 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:24:15.006 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:30:21.578 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 10:30:21.578 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[W 2023-08-22 10:30:21.579 ServerApp] kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8 restarted
+[I 2023-08-22 10:30:21.958 ServerApp] Starting buffering for cbf8233c-1078-4c2d-a3a8-a93f19b657c8:07d3e83f-02ba-49ca-8143-d117d5e2f1a6
+[I 2023-08-22 10:30:22.397 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:30:23.159 ServerApp] Connecting to kernel cbf8233c-1078-4c2d-a3a8-a93f19b657c8.
+[I 2023-08-22 10:32:18.991 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:32:46.071 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 10:33:03.185 ServerApp] Starting buffering for cbf8233c-1078-4c2d-a3a8-a93f19b657c8:9f155f9a-0d1b-4468-b6d7-ee99084cb356
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 27044397.0 ON cn506-15-r CANCELLED AT 2023-08-22T10:33:15 ***
+slurmstepd: error: *** JOB 27044397 ON cn506-15-r CANCELLED AT 2023-08-22T10:33:15 ***

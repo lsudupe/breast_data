@@ -1,0 +1,83 @@
+
+To connect to the compute node  on Ibex running your Jupyter server, 
+you need to create an ssh tunnel from your local machine to login node on Ibex 
+using the following command.
+
+ssh -L 12523:cn506-21-r:12523 medinils@ilogin.ibex.kaust.edu.sa 
+
+Next, you need to copy the second url provided below and paste it into the browser 
+on your local machine.
+
+[I 2023-08-23 08:15:47.542 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2023-08-23 08:15:47.661 ServerApp] Package jupyter_lsp took 0.1177s to import
+[W 2023-08-23 08:15:47.661 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-23 08:15:47.727 ServerApp] Package jupyter_server_terminals took 0.0658s to import
+[I 2023-08-23 08:15:47.728 ServerApp] Package notebook took 0.0000s to import
+[I 2023-08-23 08:15:47.732 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2023-08-23 08:15:47.732 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-23 08:15:47.734 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2023-08-23 08:15:47.742 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2023-08-23 08:15:47.750 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-08-23 08:15:47.759 ServerApp] notebook | extension was successfully linked.
+[I 2023-08-23 08:15:49.801 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-08-23 08:15:50.095 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-08-23 08:15:50.100 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2023-08-23 08:15:50.102 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2023-08-23 08:15:50.129 LabApp] JupyterLab extension loaded from /home/medinils/conda-environment-examples/env/lib/python3.8/site-packages/jupyterlab
+[I 2023-08-23 08:15:50.129 LabApp] JupyterLab application directory is /home/medinils/conda-environment-examples/env/share/jupyter/lab
+[I 2023-08-23 08:15:50.130 LabApp] Extension Manager is 'pypi'.
+[I 2023-08-23 08:15:50.134 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-08-23 08:15:50.139 ServerApp] notebook | extension was successfully loaded.
+[I 2023-08-23 08:15:50.140 ServerApp] Serving notebooks from local directory: /ibex/scratch/medinils/breast_data
+[I 2023-08-23 08:15:50.140 ServerApp] Jupyter Server 2.7.2 is running at:
+[I 2023-08-23 08:15:50.140 ServerApp] http://cn506-21-r:12523/lab?token=36e069c84bd0e15be83251dbca076596a18a5286bd2b57c3
+[I 2023-08-23 08:15:50.140 ServerApp]     http://127.0.0.1:12523/lab?token=36e069c84bd0e15be83251dbca076596a18a5286bd2b57c3
+[I 2023-08-23 08:15:50.141 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2023-08-23 08:15:50.149 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/medinils/.local/share/jupyter/runtime/jpserver-17136-open.html
+    Or copy and paste one of these URLs:
+        http://cn506-21-r:12523/lab?token=36e069c84bd0e15be83251dbca076596a18a5286bd2b57c3
+        http://127.0.0.1:12523/lab?token=36e069c84bd0e15be83251dbca076596a18a5286bd2b57c3
+[I 2023-08-23 08:15:50.211 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2023-08-23 08:17:36.761 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2023-08-23 08:17:42.747 ServerApp] Kernel started: e16e275b-ec01-4f62-b14e-81488b87abd3
+[I 2023-08-23 08:17:44.887 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:17:45.624 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:17:46.365 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:19:42.713 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:21:43.764 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:23:44.803 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:24:49.803 ServerApp] Kernel restarted: e16e275b-ec01-4f62-b14e-81488b87abd3
+[I 2023-08-23 08:24:50.210 ServerApp] Starting buffering for e16e275b-ec01-4f62-b14e-81488b87abd3:0ee0c030-bcdb-4ee5-820a-09a75dc7580d
+[I 2023-08-23 08:24:50.622 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:24:50.622 ServerApp] Restoring connection for e16e275b-ec01-4f62-b14e-81488b87abd3:0ee0c030-bcdb-4ee5-820a-09a75dc7580d
+[I 2023-08-23 08:25:46.239 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:27:47.342 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:29:48.312 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:31:49.682 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:33:50.706 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:35:52.232 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:37:53.189 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:39:55.690 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:41:56.694 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:42:13.081 ServerApp] Starting buffering for e16e275b-ec01-4f62-b14e-81488b87abd3:0ee0c030-bcdb-4ee5-820a-09a75dc7580d
+[W 2023-08-23 08:42:45.878 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2023-08-23 08:42:46.641 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:42:52.867 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:44:14.586 ServerApp] Kernel restarted: e16e275b-ec01-4f62-b14e-81488b87abd3
+[I 2023-08-23 08:44:15.324 ServerApp] Connecting to kernel e16e275b-ec01-4f62-b14e-81488b87abd3.
+[I 2023-08-23 08:44:52.216 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:46:53.500 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:48:54.410 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:50:55.291 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:52:56.362 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:54:57.284 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:56:58.221 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 08:58:59.174 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 09:01:00.051 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-23 09:27:01.173 ServerApp] Saving file at /notebooks/challenge.ipynb
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 27051854.0 ON cn506-21-r CANCELLED AT 2023-08-23T09:28:11 ***
+slurmstepd: error: *** JOB 27051854 ON cn506-21-r CANCELLED AT 2023-08-23T09:28:11 ***

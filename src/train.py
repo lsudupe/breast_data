@@ -16,16 +16,17 @@ from tqdm.notebook import tqdm
 from ipywidgets import FloatProgress
 from torch_geometric.utils import from_networkx
 
-
-DATA_DIR = pathlib.Path("/ibex/scratch/medinils/breast_data/data/")
-OUTPUT_DIR = pathlib.Path("results/example-training-job/")
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print("a")
+DATA_DIR = Path("/ibex/scratch/medinils/breast_data/data/")
+OUTPUT_DIR = Path("results/example-training-job/")
 OUTPUT_FILENAME = OUTPUT_DIR / "model.joblib"
 SEED = 42
 TEST_SIZE = 0.1
 TRAIN_N_JOBS = -1
 VERBOSITY = 10
 
-
+print("b")
 ##load the data
 train_features_dir = data_dir / "train_input" / "moco_features"
 test_features_dir = data_dir / "test_input" / "moco_features"
@@ -79,7 +80,7 @@ for sample, patient, center, label in tqdm(
     patients_train.append(patient)
 
 import psutil
-
+print("c")
 def memory_usage():
     process = psutil.Process(os.getpid())
     return f"Memory usage: {process.memory_info().rss / (1024 ** 3):.2f} GB"
@@ -93,13 +94,14 @@ graph_embeddings = {}
 
 # Convert your networkx graphs to PyTorch Geometric data objects
 data_list = [from_networkx(graph) for graph in graphs.values()]
+print("d")
 
 # Loop through each graph and generate embeddings
 for patient, data in tqdm(zip(graphs.keys(), data_list), desc="Generating embeddings"):
     # Initialize Node2Vec model
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = Node2Vec(data.edge_index, embedding_dim=64, walk_length=30,
-                     context_size=10, walks_per_node=200).to(device)
+    model = Node2Vec(data.edge_index, embedding_dim=64, walk_length=15,
+                     context_size=10, walks_per_node=50).to(device)
     data = data.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
@@ -122,6 +124,7 @@ for patient, data in tqdm(zip(graphs.keys(), data_list), desc="Generating embedd
     # Store aggregated embeddings in the dictionary
     graph_embeddings[patient] = aggregated_embedding
     
+print("d")
 # Save the embeddings to a file in the specified directory
 np.save(data_dir / 'embeddings/graph_embeddings.npy', graph_embeddings)
 

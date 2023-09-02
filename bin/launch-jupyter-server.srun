@@ -3,7 +3,8 @@
 # setup the environment
 module purge
 
-conda activate /ibex/scratch/medinils/breast_data/env
+#conda activate pygeom
+conda activate /home/medinils/conda-environment-examples/env
 
 # setup ssh tunneling 
 IBEX_COMPUTE_NODE=$(hostname -s) 
@@ -24,4 +25,4 @@ on your local machine.
 NOTEBOOK_DIR="/ibex/scratch/medinils/breast_data"
 
 # launch jupyter server
-jupyter ${1:-lab} --no-browser --port=${JUPYTER_PORT} --ip=${IBEX_COMPUTE_NODE}
+jupyter ${1:-lab} --no-browser --port=${JUPYTER_PORT} --ip=${IBEX_COMPUTE_NODE} --notebook-dir=${NOTEBOOK_DIR}

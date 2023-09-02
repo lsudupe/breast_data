@@ -1,20 +1,21 @@
 #!/bin/bash --login
-#SBATCH --time 2:00:00
+#SBATCH --time 10:00:00
 #SBATCH --cpus-per-task=4  
-#SBATCH --mem-per-cpu=9G 
+#SBATCH --mem-per-cpu=100G 
 #SBATCH --constraint=intel
 #SBATCH --partition=batch 
 #SBATCH --mail-type=ALL
-#SBATCH --output=results/%x/%j-slurm.out
-#SBATCH --error=results/%x/%j-slurm.err
+#SBATCH --output=bin/%x-%j-slurm.out
+#SBATCH --error=bin/%x-%j-slurm.err
 
 # entire script fails if single command fails
 set -e
 
 # activate the conda environment
 module purge
-ENV_PREFIX="$PROJECT_DIR"/env
-conda activate $ENV_PREFIX
+export PROJECT_DIR="$PWD"
+conda activate /ibex/scratch/medinils/breast_data/env
 
 # launch the training script
-python "$1"
+python /ibex/scratch/medinils/breast_data/src/train.py
+#python /ibex/scratch/medinils/breast_data/src/train_2.py

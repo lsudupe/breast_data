@@ -1,0 +1,120 @@
+/ibex/scratch/medinils/breast_data/bin/launch-jupyter-server.srun: line 7: S: command not found
+
+To connect to the compute node  on Ibex running your Jupyter server, 
+you need to create an ssh tunnel from your local machine to login node on Ibex 
+using the following command.
+
+ssh -L 12620:cn506-08-r:12620 medinils@ilogin.ibex.kaust.edu.sa 
+
+Next, you need to copy the second url provided below and paste it into the browser 
+on your local machine.
+
+[I 2023-08-22 10:54:29.479 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2023-08-22 10:54:30.011 ServerApp] Package jupyter_lsp took 0.5309s to import
+[W 2023-08-22 10:54:30.011 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:54:30.039 ServerApp] Package jupyter_server_terminals took 0.0272s to import
+[I 2023-08-22 10:54:30.040 ServerApp] Package notebook took 0.0000s to import
+[I 2023-08-22 10:54:30.044 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2023-08-22 10:54:30.044 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-08-22 10:54:30.045 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2023-08-22 10:54:30.053 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2023-08-22 10:54:30.062 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-08-22 10:54:30.070 ServerApp] notebook | extension was successfully linked.
+[I 2023-08-22 10:54:31.230 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-08-22 10:54:31.398 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-08-22 10:54:31.417 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2023-08-22 10:54:31.419 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2023-08-22 10:54:31.428 LabApp] JupyterLab extension loaded from /home/medinils/miniconda3/envs/pygeom/lib/python3.9/site-packages/jupyterlab
+[I 2023-08-22 10:54:31.428 LabApp] JupyterLab application directory is /home/medinils/miniconda3/envs/pygeom/share/jupyter/lab
+[I 2023-08-22 10:54:31.429 LabApp] Extension Manager is 'pypi'.
+[I 2023-08-22 10:54:31.433 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-08-22 10:54:31.438 ServerApp] notebook | extension was successfully loaded.
+[I 2023-08-22 10:54:31.439 ServerApp] Serving notebooks from local directory: /ibex/scratch/medinils/breast_data
+[I 2023-08-22 10:54:31.439 ServerApp] Jupyter Server 2.7.2 is running at:
+[I 2023-08-22 10:54:31.439 ServerApp] http://cn506-08-r:12620/lab?token=22536daebc85b100f677ba7f6cdbad0d74283bf9fa1c35fb
+[I 2023-08-22 10:54:31.439 ServerApp]     http://127.0.0.1:12620/lab?token=22536daebc85b100f677ba7f6cdbad0d74283bf9fa1c35fb
+[I 2023-08-22 10:54:31.439 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2023-08-22 10:54:31.447 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/medinils/.local/share/jupyter/runtime/jpserver-79349-open.html
+    Or copy and paste one of these URLs:
+        http://cn506-08-r:12620/lab?token=22536daebc85b100f677ba7f6cdbad0d74283bf9fa1c35fb
+        http://127.0.0.1:12620/lab?token=22536daebc85b100f677ba7f6cdbad0d74283bf9fa1c35fb
+[I 2023-08-22 10:54:31.520 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2023-08-22 11:07:20.253 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2023-08-22 11:07:25.093 ServerApp] Kernel started: 85555aa5-6b94-419e-a503-194c5f24a097
+[I 2023-08-22 11:07:27.389 ServerApp] Connecting to kernel 85555aa5-6b94-419e-a503-194c5f24a097.
+[I 2023-08-22 11:07:28.139 ServerApp] Connecting to kernel 85555aa5-6b94-419e-a503-194c5f24a097.
+[I 2023-08-22 11:07:29.199 ServerApp] Connecting to kernel 85555aa5-6b94-419e-a503-194c5f24a097.
+[I 2023-08-22 11:09:24.688 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:11:25.877 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:17:31.526 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:19:32.580 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:21:33.589 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:23:34.663 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:25:35.911 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:27:37.055 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:29:38.904 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:31:40.887 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:35:42.911 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:36:32.707 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:38:33.856 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:40:34.973 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:42:36.891 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:46:38.869 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:48:32.483 ServerApp] Kernel restarted: 85555aa5-6b94-419e-a503-194c5f24a097
+[I 2023-08-22 11:48:32.934 ServerApp] Starting buffering for 85555aa5-6b94-419e-a503-194c5f24a097:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:48:33.309 ServerApp] Connecting to kernel 85555aa5-6b94-419e-a503-194c5f24a097.
+[I 2023-08-22 11:48:33.309 ServerApp] Restoring connection for 85555aa5-6b94-419e-a503-194c5f24a097:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:48:39.937 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:51:11.466 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 11:51:11.467 ServerApp] kernel 85555aa5-6b94-419e-a503-194c5f24a097 restarted
+[I 2023-08-22 11:51:11.838 ServerApp] Starting buffering for 85555aa5-6b94-419e-a503-194c5f24a097:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:51:12.226 ServerApp] Connecting to kernel 85555aa5-6b94-419e-a503-194c5f24a097.
+[I 2023-08-22 11:51:12.226 ServerApp] Restoring connection for 85555aa5-6b94-419e-a503-194c5f24a097:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:51:26.426 ServerApp] Kernel started: abe35e75-9fea-4ce7-99b4-3f8d80036cd0
+[I 2023-08-22 11:51:26.427 ServerApp] Kernel shutdown: 85555aa5-6b94-419e-a503-194c5f24a097
+[I 2023-08-22 11:51:28.004 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:52:02.411 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 11:52:02.411 ServerApp] kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0 restarted
+[I 2023-08-22 11:52:02.783 ServerApp] Starting buffering for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:03.261 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:52:03.261 ServerApp] Restoring connection for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:20.441 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 11:52:20.441 ServerApp] kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0 restarted
+[I 2023-08-22 11:52:20.810 ServerApp] Starting buffering for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:21.194 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:52:21.195 ServerApp] Restoring connection for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:29.465 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), keep random ports
+[W 2023-08-22 11:52:29.465 ServerApp] kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0 restarted
+[I 2023-08-22 11:52:29.836 ServerApp] Starting buffering for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:30.221 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:52:30.221 ServerApp] Restoring connection for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:52:41.193 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 11:53:41.494 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2023-08-22 11:53:41.494 ServerApp] kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0 restarted
+[I 2023-08-22 11:53:41.974 ServerApp] Starting buffering for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:53:42.362 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:53:42.362 ServerApp] Restoring connection for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:53:50.525 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (2/5), keep random ports
+[W 2023-08-22 11:53:50.526 ServerApp] kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0 restarted
+[I 2023-08-22 11:53:50.896 ServerApp] Starting buffering for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:53:51.284 ServerApp] Connecting to kernel abe35e75-9fea-4ce7-99b4-3f8d80036cd0.
+[I 2023-08-22 11:53:51.284 ServerApp] Restoring connection for abe35e75-9fea-4ce7-99b4-3f8d80036cd0:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 11:54:15.804 ServerApp] Kernel started: 13d4960f-45eb-4433-9b8e-dde3e2f8ab39
+[I 2023-08-22 11:54:15.805 ServerApp] Kernel shutdown: abe35e75-9fea-4ce7-99b4-3f8d80036cd0
+[I 2023-08-22 11:54:17.139 ServerApp] Connecting to kernel 13d4960f-45eb-4433-9b8e-dde3e2f8ab39.
+[I 2023-08-22 11:54:42.876 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 12:07:37.916 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 12:13:45.846 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 12:20:41.667 ServerApp] Kernel restarted: 13d4960f-45eb-4433-9b8e-dde3e2f8ab39
+[I 2023-08-22 12:20:42.039 ServerApp] Starting buffering for 13d4960f-45eb-4433-9b8e-dde3e2f8ab39:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 12:20:42.455 ServerApp] Connecting to kernel 13d4960f-45eb-4433-9b8e-dde3e2f8ab39.
+[I 2023-08-22 12:20:42.456 ServerApp] Restoring connection for 13d4960f-45eb-4433-9b8e-dde3e2f8ab39:a211e4c8-8dc1-402f-9155-bb7030bb2013
+[I 2023-08-22 12:21:48.850 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 12:22:08.248 ServerApp] Saving file at /notebooks/challenge.ipynb
+[I 2023-08-22 12:22:10.610 ServerApp] Starting buffering for 13d4960f-45eb-4433-9b8e-dde3e2f8ab39:a211e4c8-8dc1-402f-9155-bb7030bb2013
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 27044699.0 ON cn506-08-r CANCELLED AT 2023-08-22T12:22:38 ***
+slurmstepd: error: *** JOB 27044699 ON cn506-08-r CANCELLED AT 2023-08-22T12:22:38 ***
