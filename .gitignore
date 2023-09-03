@@ -9,6 +9,10 @@ __pycache__/
 # .xml files
 *.xml
 
+#pycharm
+.idea
+.virtual_documents/notebooks
+
 # Mac files
 *DS*
 
