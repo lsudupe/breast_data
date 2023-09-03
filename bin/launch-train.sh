@@ -10,5 +10,5 @@ mkdir -p /ibex/scratch/medinils/breast_data/results"$JOB_NAME"
 
 # launch the training job
 sbatch --job-name "$JOB_NAME" "$breast_dir"/bin/train.sbatch "$breast_dir"/src/train.py 
-#sbatch --job-name "$JOB_NAME" "$breast_dir"/bin/train.sbatch "$breast_dir"/src/train_2.py
+#sbatch --job-name "$JOB_NAME" "$breast_dir"/bin/train.sbatch "$breast_dir"/src/Node2vec.py
 

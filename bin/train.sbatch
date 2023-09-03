@@ -18,4 +18,4 @@ conda activate /ibex/scratch/medinils/breast_data/env
 
 # launch the training script
 python /ibex/scratch/medinils/breast_data/src/train.py
-#python /ibex/scratch/medinils/breast_data/src/train_2.py
+#python /ibex/scratch/medinils/breast_data/src/Node2vec.py
