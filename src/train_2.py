@@ -16,6 +16,9 @@ import psutil
 from tqdm.notebook import tqdm
 
 
+print('test')
+
+
 os.environ['TORCH'] = torch.__version__
 print(torch.__version__)
 
