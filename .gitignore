@@ -14,8 +14,11 @@ __pycache__/
 .virtual_documents/notebooks
 
 # Mac files
-*DS*
+.DS_Store
+._.DS_Store
 
+# some dirs
+bin/.virtual_documents/
 # In this case data
 data/
 
