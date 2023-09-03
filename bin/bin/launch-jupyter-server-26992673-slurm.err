@@ -1,2 +1,0 @@
-slurmstepd: error: execve(): /ibex/scratch/medinils/breast_data/bin/bin/launch-jupyter-server.srun: No such file or directory
-srun: error: cn605-21-l: task 0: Exited with exit code 2

@@ -1,1 +1,0 @@
-/var/spool/slurm/job27042531/slurm_script: line 21: 86575 Segmentation fault      python /ibex/scratch/medinils/breast_data/src/train_2.py
