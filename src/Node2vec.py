@@ -133,8 +133,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 for patient, data in tqdm(zip(graphs.keys(), data_list), total=len(data_list), desc="Processing Graphs"):
     
     # Initialize Node2Vec model with num_negative_samples parameter
-    model = Node2Vec(data.edge_index, embedding_dim=64, walk_length=10,
-                     context_size=5, walks_per_node=100, num_negative_samples=2).to(device)
+    model = Node2Vec(data.edge_index, embedding_dim=64, walk_length=15,
+                     context_size=5, walks_per_node=150, num_negative_samples=5).to(device)
     loader = model.loader(batch_size=64, shuffle=True, num_workers=4)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
@@ -170,7 +170,7 @@ for patient, data in tqdm(zip(graphs.keys(), data_list), total=len(data_list), d
     print(memory_usage())
     
 # Specify the path for saving
-save_path = "/ibex/scratch/medinils/breast_data/data/embeddings/graph_embeddings_20.npy"
+save_path = "/ibex/scratch/medinils/breast_data/data/embeddings/graph_embeddings.npy"
 
 # Save the embeddings to the specified path
 np.save(save_path, graph_embeddings)
