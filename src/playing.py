@@ -32,7 +32,9 @@ G1 = graphs[key_list[0]]
 g = nx.Graph()
 
 print(f'number of nodes: {G1.number_of_nodes()}')
+print(f'node features: {nx.get_node_attributes(G1, "features")}')
 print(f'number of edges: {G1.number_of_edges()}')
+print(f'node features: {nx.get_edge_attributes(G1)}')
 
 print(f'number of isolated nodes: {nx.number_of_isolates(G1)}')
 print(f'number of self-loops: {nx.number_of_selfloops(G1)}')
@@ -42,6 +44,7 @@ degrees = [val for (node, val) in G1.degree()]
 print(len(degrees))
 print(sum(degrees))
 print(f'average degree: {nx.average_degree_connectivity(G1)}')
+print(f'average connectivity degree in the neighborhood: {nx.average_neighbor_degree(G1)}')
 
 plt.figure(figsize=(10, 6))
 plt.hist(degrees, bins=50)
