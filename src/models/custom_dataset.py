@@ -6,7 +6,7 @@ class BreastData(Dataset):
         self._data_list = data_list
 
     def len(self):
-        return len(self._data_list)
+        return len(self.data_list)
 
     def get(self, idx):
-        return self._data_list[idx]
+        return self.data_list[idx]
