@@ -20,7 +20,7 @@ __pycache__/
 # some dirs
 bin/.virtual_documents/
 # In this case data
-data/
+data/graph_embeddings.npy
 
 # Distribution / packaging
 .Python
