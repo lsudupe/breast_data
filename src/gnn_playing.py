@@ -35,3 +35,11 @@ from src.models.custom_dataset import BreastData
 from src.models.custom_dataset import BreastData
 
 
+datasetLaura = BreastData(data_list=data_list, root="/ibex/scratch/medinils/breast_data/data/process/")
+
+print(f'Dataset: {datasetLaura}:')
+print(f'Number of features: {dataset.num_features}')
+print(f'Number of classes: {dataset.num_classes}')
+
+some_graph = dataset[0]
+print(some_graph.x)
