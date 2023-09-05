@@ -15,10 +15,6 @@ import pickle
 import psutil
 from tqdm.notebook import tqdm
 
-
-print('test')
-
-
 os.environ['TORCH'] = torch.__version__
 print(torch.__version__)
 
@@ -39,7 +35,6 @@ df_train = df_train.merge(y_train, on="Sample ID")
 
 print(f"Training data dimensions: {df_train.shape}")  # (344, 4)
 df_train.head()
-
 
 # Data processing
 ## create a graph dic to store them
