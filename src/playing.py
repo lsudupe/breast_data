@@ -12,7 +12,6 @@ import torch
 from torch_geometric.nn import Node2Vec
 from torch_geometric.utils import from_networkx
 import os
-import torch
 import pickle
 import psutil
 from tqdm.notebook import tqdm
