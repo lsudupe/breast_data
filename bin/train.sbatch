@@ -17,4 +17,5 @@ conda activate /home/medinils/pytorch-gpu-data-science-project/env
 module load cuda/11.7.0
 
 # launch the training script
-python /ibex/scratch/medinils/breast_data/src/Node2vec.py
+#python /ibex/scratch/medinils/breast_data/src/Node2vec.py
+python /ibex/scratch/medinils/breast_data/src/gnn_playing.py
