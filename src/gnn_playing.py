@@ -4,42 +4,40 @@ from pathlib import Path
 import torch
 from torch_geometric.utils import from_networkx
 from torch_geometric.data import Dataset
+import pickle
+import networkx as nx
 
-
-
-
-from torch_geometric.datasets import TUDataset
-dataset = TUDataset(root='data/TUDataset', name='MUTAG')
-data = dataset[0]  # Get the first graph object.
-torch.manual_seed(12345)
-dataset = dataset.shuffle()
-
-train_dataset = dataset[:150]
-test_dataset = dataset[150:]
-train_dataset
-test_dataset
-
-print(f'Number of training graphs: {len(train_dataset)}')
-print(f'Number of test graphs: {len(test_dataset)}')
 
 # Load the dictionary
 save_path = "/ibex/scratch/medinils/breast_data/data/process/graphs.pkl"
 with open(save_path, 'rb') as file:
     graphs = pickle.load(file)
 
-# Node2vec
-# Convert your networkx graphs to PyTorch Geometric data objects
-data_list = [from_networkx(graph) for graph in graphs.values()]
+data_list = []
+for graph in graphs.values():
+    data = from_networkx(graph, group_node_attrs=["features"])
+    data.y = torch.tensor([graph.graph['label']], dtype=torch.long)
+    data_list.append(data)
+
 
 from src.models.custom_dataset import BreastData
-from src.models.custom_dataset import BreastData
-
 
 datasetLaura = BreastData(data_list=data_list, root="/ibex/scratch/medinils/breast_data/data/process/")
 
 print(f'Dataset: {datasetLaura}:')
-print(f'Number of features: {dataset.num_features}')
-print(f'Number of classes: {dataset.num_classes}')
+print(f'Number of features: {datasetLaura.num_features}')
+print(f'Number of classes: {datasetLaura.num_classes}')
 
-some_graph = dataset[0]
-print(some_graph.x)
+
+# check first graph
+data = datasetLaura[0]
+
+print(f'Number of nodes: {data.num_nodes}')
+print(f'Number of edges: {data.num_edges}')
+print(f'Average node degree: {data.num_edges / data.num_nodes:.2f}')
+print(f'Has isolated nodes: {data.has_isolated_nodes()}')
+print(f'Has self-loops: {data.has_self_loops()}')
+print(f'Is undirected: {data.is_undirected()}')
+
+G1 = next(iter(graphs.values()))
+
