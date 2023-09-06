@@ -1,4 +1,5 @@
 # create a custom dataset class
+from torch_geometric.data import Dataset, Data
 
 class BreastData(Dataset):
     def __init__(self, data_list, root, transform=None, pre_transform=None):
