@@ -87,8 +87,8 @@ for step, data in enumerate(train_loader):
 
 ## Training GNN
 
-
-
+model = GCN(dataset=datasetLaura, hidden_channels=64)
+print(model)
 
 
 
