@@ -86,6 +86,7 @@ for step, data in enumerate(train_loader):
     print()
 
 ## Training GNN
+from.src.models.GNN import GCN
 
 model = GCN(dataset=datasetLaura, hidden_channels=64)
 print(model)
