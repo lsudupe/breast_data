@@ -14,7 +14,7 @@ class GCN(torch.nn.Module):
         self.conv3 = GCNConv(hidden_channels, hidden_channels)
         self.lin = Linear(hidden_channels, dataset.num_classes)
 
-    def forward(self, edge_index, batch):
+    def forward(self, x, edge_index, batch):
         # 1. get node embedding
         x = self.conv1(x, edge_index)
         x = x.relu()
