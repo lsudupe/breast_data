@@ -70,6 +70,8 @@ for sample, patient, center, label in tqdm(
                 # add features as node attributes
                 G.nodes[tri[i]].update({'features': features[tri[i]]})
                 G.nodes[tri[j]].update({'features': features[tri[j]]})
+                # Add the target label to the graph's attributes
+                G.graph['label'] = label
     # store the graphs for each patient (key)
     graphs[patient] = G
     
