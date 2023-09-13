@@ -116,11 +116,24 @@ def test(loader):
      return correct / len(loader.dataset)  # Derive ratio of correct predictions.
 
 
-for epoch in range(1, 171):
+for epoch in range(1, 50):
     train()
     train_acc = test(train_loader)
     test_acc = test(test_loader)
     print(f'Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Test Acc: {test_acc:.4f}')
+
+
+## add epoch plot
+plt.figure(figsize=(10, 6))
+plt.plot(epochs, train_acc, label='Train Accuracy', color='blue', marker='o')
+plt.plot(epochs, test_acc, label='Test Accuracy', color='red', marker='o')
+plt.title('Training and Testing Accuracy Over Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
 
 
 
