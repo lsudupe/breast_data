@@ -135,5 +135,13 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
+## save the plot
+# Specify the directory and filename
+save_dir = "/ibex/scratch/medinils/breast_data/results/GNN"
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+save_path = os.path.join(save_dir, "accuracy_over_epochs.pdf")
 
+# Save the figure as a PDF
+plt.savefig(save_path)
 
