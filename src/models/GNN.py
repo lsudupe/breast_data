@@ -20,14 +20,14 @@ class GNN(torch.nn.Module):
             self.conv2 = GATConv(hidden_channels, hidden_channels)
             self.conv3 = GATConv(hidden_channels, hidden_channels)
 
-        elif conv_type == 'graphsage'
+        elif conv_type == 'graphsage':
             self.conv1 = SAGEConv(dataset.num_node_features, hidden_channels)
             self.conv2 = SAGEConv(hidden_channels, hidden_channels)
             self.conv3 = SAGEConv(hidden_channels, hidden_channels)
 
     def forward(self, x, edge_index, batch):
         # 1. get node embedding
-        if self.conv_type == 'gat'
+        if self.conv_type == 'gat':
             x = F.elu(self.conv1(x, edge_index))
             x = F.elu(self.conv2(x, edge_index))
             embeddings = x.detach() # save the embeddings after the second layer
