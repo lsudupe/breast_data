@@ -1,6 +1,5 @@
 # GNN model for graph classification
 import torch.nn
-from torch.nn import Linear
 import torch.nn.functional as F
 from torch_geometric.nn import GCNConv, GATConv, SAGEConv, global_mean_pool
 
