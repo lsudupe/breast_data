@@ -12,7 +12,6 @@ class BreastData(Dataset):
     def get(self, idx):
         return self.data_list[idx]
 
- @property
     def processed_file_names(self):
         # This function expects names of processed files, but we can return a dummy list
         return ['dummy']
