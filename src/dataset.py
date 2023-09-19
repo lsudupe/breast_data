@@ -2,6 +2,7 @@
 ## libraries
 from torch_geometric.utils import from_networkx
 import pickle
+import torch
 
 ## Load the dictionary
 save_path = "/ibex/scratch/medinils/breast_data/data/process/graphs.pkl"
