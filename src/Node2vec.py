@@ -1,4 +1,4 @@
-##Node2vec embedding algorithm
+## Node2vec embedding algorithm
 
 # libraries
 import numpy as np
@@ -43,6 +43,7 @@ def memory_usage():
 
 # Dictionary to store embeddings for each graph
 graph_embeddings = {}
+
 # Initialize a counter to keep track of processed graphs
 processed_graphs = 0
 
