@@ -14,6 +14,7 @@ from src.models.GNN import GNN
 ## read dataset
 datasetLaura = BreastData(root="/ibex/scratch/medinils/breast_data/data/process/")
 
+## extract patient, sample and center id
 patient_ids = [data.patient_id for data in datasetLaura]
 sample_ids = [data.sample_id for data in datasetLaura]
 center_ids = [data.center_id for data in datasetLaura]
@@ -27,16 +28,17 @@ for idx, data in enumerate(datasetLaura):
 ## Convert the dictionary values (lists of indices) to a list
 grouped_indices = list(patient_to_indices.values())
 
+## split data into training and test sets
 n_splits = 5
 kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
 for train_grouped_idx, test_grouped_idx in kf.split(grouped_indices):
     # Flatten the grouped indices to get actual dataset indices
     train_idx = [idx for group in train_grouped_idx for idx in grouped_indices[group]]
     test_idx = [idx for group in test_grouped_idx for idx in grouped_indices[group]]
-
     train_dataset = [datasetLaura[i] for i in train_idx]
     test_dataset = [datasetLaura[i] for i in test_idx]
 
+## print the number of graphs in train and test sets
 print(f'Number of training graphs: {len(train_dataset)}')
 print(f'Number of test graphs: {len(test_dataset)}')
 
@@ -44,6 +46,7 @@ print(f'Number of test graphs: {len(test_dataset)}')
 train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
+## print the batches
 for step, data in enumerate(train_loader):
     print(f'Step {step + 1}:')
     print('=======')
@@ -51,40 +54,48 @@ for step, data in enumerate(train_loader):
     print(data)
     print()
 
-## Training GNN
-model = GNN(dataset=datasetLaura, hidden_channels=64)
-print(model)
-
-optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
-criterion = torch.nn.CrossEntropyLoss()
-
-
-def train():
+## train function
+def train(model, optimizer, criterion, loader):
     model.train()
-    for data in train_loader:  # Iterate in batches over the training dataset.
-        out = model(data.x, data.edge_index, data.batch)  # Perform a single forward pass.
-        loss = criterion(out, data.y)  # Compute the loss.
-        loss.backward()  # Derive gradients.
-        optimizer.step()  # Update parameters based on gradients.
-        optimizer.zero_grad()  # Clear gradients.
 
-def test(loader):
+    total_loss = 0  # for optionally tracking the average training loss
+    for data in loader:
+        out = model(data.x, data.edge_index, data.batch)["output"]  # Note: using ["output"]
+        loss = criterion(out, data.y)
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+
+        total_loss += loss.item()  # optionally tracking the average training loss
+
+    return total_loss / len(loader)  # optionally return the average training loss
+
+## test function
+def test(model, loader):
     model.eval()
 
     correct = 0
-    for data in loader:  # Iterate in batches over the training/test dataset.
-        out = model(data.x, data.edge_index, data.batch)
-        pred = out.argmax(dim=1)  # Use the class with highest probability.
-        correct += int((pred == data.y).sum())  # Check against ground-truth labels.
-    return correct / len(loader.dataset)  # Derive ratio of correct predictions.
+    for data in loader:
+        out = model(data.x, data.edge_index, data.batch)["output"]
+        pred = out.argmax(dim=1)
+        correct += int((pred == data.y).sum())
 
-
+    return correct / len(loader.dataset)
 
 ## lets evaluate the three models
 ## list of models
 model_type = ['gcn', 'gat', 'graphsage']
 
-for epoch in range(1, 50):
+for model_type in model_type_list:
+    # Initialize model, optimizer, criterion
+    model = GNN(dataset=datasetLaura, hidden_channels=64, model_type=model_type)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+    criterion = torch.nn.CrossEntropyLoss()
+
+    train_accuracies = []
+    test_accuracies = []
+
+    for epoch in range(1, 50):
         train()
         train_acc = test(train_loader)
         test_acc = test(test_loader)
