@@ -88,7 +88,7 @@ model_type_list = ['gcn', 'gat', 'graphsage']
 
 for model_type in model_type_list:
     # Initialize model, optimizer, criterion
-    model = GNN(dataset=datasetLaura, hidden_channels=64, model_type=model_type)
+    model = GNN(dataset=datasetLaura, hidden_channels=64, conv_type=model_type)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
     criterion = torch.nn.CrossEntropyLoss()
 
