@@ -12,7 +12,7 @@ from src.models.custom_dataset import BreastData
 from src.models.GNN import GNN
 
 ## read dataset
-datasetLaura = BreastData(data_list, root="/ibex/scratch/medinils/breast_data/data/process/")
+datasetLaura = BreastData(root="/ibex/scratch/medinils/breast_data/data/process/")
 
 ## extract patient, sample and center id
 patient_ids = [data.patient_id for data in datasetLaura]
