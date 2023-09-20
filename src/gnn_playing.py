@@ -84,7 +84,7 @@ def test(model, loader):
 
 ## lets evaluate the three models
 ## list of models
-model_type = ['gcn', 'gat', 'graphsage']
+model_type_list = ['gcn', 'gat', 'graphsage']
 
 for model_type in model_type_list:
     # Initialize model, optimizer, criterion
