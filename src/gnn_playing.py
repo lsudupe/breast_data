@@ -96,9 +96,9 @@ for model_type in model_type_list:
     test_accuracies = []
 
     for epoch in range(1, 50):
-        train()
-        train_acc = test(train_loader)
-        test_acc = test(test_loader)
+        train(model, optimizer, criterion, train_loader)
+        train_acc = test(model, train_loader)
+        test_acc = test(model, test_loader)
         train_accuracies.append(train_acc)
         test_accuracies.append(test_acc)
         print(f'Model: {model_type.upper()}, Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Test Acc: {test_acc:.4f}')
