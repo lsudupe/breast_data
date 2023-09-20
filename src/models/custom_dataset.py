@@ -1,4 +1,5 @@
 # create a custom dataset class
+import torch
 from torch_geometric.data import Dataset, Data
 
 class BreastData(Dataset):
@@ -14,4 +15,12 @@ class BreastData(Dataset):
 
     def processed_file_names(self):
         # This function expects names of processed files, but we can return a dummy list
-        return ['dummy']
+        return ['data.pt']
+
+    def process(self):
+        # save the list
+        torch.save(self.data_list, self.procedded_dir + '/data.pt')
+
+    def load_processed(self):
+        # load the data from the processed file
+        self.data_list = torch.load(self.processed_dir + '/data.pt')
