@@ -3,7 +3,7 @@
 from torch_geometric.utils import from_networkx
 import pickle
 import torch
-from src.models.custom_dataset import BreastData
+from models.custom_dataset import BreastData
 
 ## Load the dictionary
 save_path = "/ibex/scratch/medinils/breast_data/data/process/graphs.pkl"
