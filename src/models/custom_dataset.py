@@ -6,6 +6,8 @@ class BreastData(Dataset):
     def __init__(self, data_list, root, transform=None, pre_transform=None):
         self.data_list = data_list
         super(BreastData, self).__init__(root, transform, pre_transform)
+        if data_list is None:
+            self.load_processed()
 
 
     def len(self):
