@@ -8,8 +8,11 @@ class GNN(torch.nn.Module):
     def __init__(self, dataset, hidden_channels, conv_type):
         super(GNN, self).__init__()
         torch.manual_seed(12345)
-        self.lin = nn.Linear(in_features, out_features)
         self.conv_type = conv_type #save the argument conv_type as an object atribute
+
+        in_features = dataset.num_node_features
+        out_features = hidden_channels
+        self.lin = nn.Linear(in_features, out_features)
 
         if conv_type == 'gcn':
             self.conv1 = GCNConv(dataset.num_node_features, hidden_channels)
