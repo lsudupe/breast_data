@@ -105,11 +105,17 @@ for model_type in model_type_list:
         print(f'Model: {model_type.upper()}, Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Test Acc: {test_acc:.4f}')
 
     # Save the embeddings
+    # Get the embeddings from the last batch in the training data (or choose any specific data you wish)
+    data = next(iter(train_loader))  # This gets the first batch, change as needed
+    outputs = model(data.x, data.edge_index, data.batch)
+    embeddings = outputs["embeddings"]
+
+    # Save the embeddings
     embeddings_dir = f"/ibex/scratch/medinils/breast_data/results/{model_type.upper()}/embeddings"
     if not os.path.exists(embeddings_dir):
         os.makedirs(embeddings_dir)
 
-    torch.save(model.embeddings, os.path.join(embeddings_dir, 'embeddings.pt'))
+    torch.save(embeddings, os.path.join(embeddings_dir, 'embeddings.pt'))
 
     # Plotting training progress
     plt.figure(figsize=(10, 6))
