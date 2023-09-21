@@ -10,10 +10,6 @@ class GNN(torch.nn.Module):
         torch.manual_seed(12345)
         self.conv_type = conv_type #save the argument conv_type as an object atribute
 
-        in_features = dataset.num_node_features
-        out_features = hidden_channels
-        self.lin = nn.Linear(in_features, out_features)
-
         if conv_type == 'gcn':
             self.conv1 = GCNConv(dataset.num_node_features, hidden_channels)
             self.conv2 = GCNConv(hidden_channels, hidden_channels)
@@ -47,7 +43,6 @@ class GNN(torch.nn.Module):
 
         # 3. classifier
         x = F.dropout(x, p=0.5, training=self.training)
-        x = self.lin(x)
 
         return {"output": x, "embeddings": embeddings}
 
