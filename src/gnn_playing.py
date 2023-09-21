@@ -6,6 +6,7 @@ sys.path.append('/ibex/scratch/medinils/breast_data/')
 import torch
 import os
 from collections import defaultdict
+from matplotlib import pyplot as plt
 from sklearn.model_selection import KFold
 from torch_geometric.loader import DataLoader
 from src.models.custom_dataset import BreastData
