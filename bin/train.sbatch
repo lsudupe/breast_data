@@ -20,3 +20,4 @@ module load cuda/11.7.0
 python /ibex/scratch/medinils/breast_data/src/graph_creation.py
 python /ibex/scratch/medinils/breast_data/src/dataset.py
 python /ibex/scratch/medinils/breast_data/src/gnn_playing.py
+python /ibex/scratch/medinils/breast_data/src/plotting.py
