@@ -5,9 +5,12 @@ import sys
 sys.path.append('/ibex/scratch/medinils/breast_data/')
 import torch
 import os
+import time
+import psutil
 from collections import defaultdict
 from matplotlib import pyplot as plt
 from sklearn.model_selection import KFold
+from sklearn.metrics import f1_score, precision_score, recall_score
 from torch_geometric.loader import DataLoader
 from src.models.custom_dataset import BreastData
 from src.models.GNN import GNN
@@ -84,6 +87,18 @@ def test(model, loader):
     return correct / len(loader.dataset)
 
 ## lets evaluate the three models
+
+## model metrics
+model_metrics = {
+    'accuracy_train': [],
+    'accuracy_test' : [],
+    'f1' : [],
+    'precision' : [],
+    'recall' : [],
+    'train_loss' : [],
+    'time_per_epoch' : [],
+    'memory_usage': []
+}
 ## list of models
 model_type_list = ['gcn', 'gat', 'graphsage']
 
@@ -93,16 +108,37 @@ for model_type in model_type_list:
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
     criterion = torch.nn.CrossEntropyLoss()
 
-    train_accuracies = []
-    test_accuracies = []
 
     for epoch in range(1, 50):
-        train(model, optimizer, criterion, train_loader)
+        start_time = time.time()
+        avg_train_loss = train(model, optimizer, criterion, train_loader)
+        end_time = time.time()
+
+        # train_loss, time per epoch and memory usage info added to the dic
+        model_metrics['train_loss'].append(avg_train_loss)
+        model_metrics['time_per_epoch'].append(end_time - start_time)
+        model_metrics['memory_usage'].append(psutil.Process(os.getpid()).memory_info().rss / 1e9) #GBs
+
         train_acc = test(model, train_loader)
         test_acc = test(model, test_loader)
-        train_accuracies.append(train_acc)
-        test_accuracies.append(test_acc)
+
         print(f'Model: {model_type.upper()}, Epoch: {epoch:03d}, Train Acc: {train_acc:.4f}, Test Acc: {test_acc:.4f}')
+
+        # f1, precision, recall and accuracy added to the dic
+        data = next(iter(train_loader))
+        out = model(data.x, data.edge_index, data.batch)['output']
+        pred = out.argmax(dim=1).cpu().numpy()
+        labels = data.y.cpu().numpy()
+
+        f1 = f1_score(labels, pred, average='macro')
+        prec = precision_score(labels, pred, average='macro')
+        recall = recall_score(labels, pred, average='macro')
+
+        model_metrics['f1'].append(f1)
+        model_metrics['precision'].append(prec)
+        model_metrics['recall'].append(recall)
+        model_metrics['accuracy_train'].append(train_acc)
+        model_metrics['accuracy_test'].append(test_acc)
 
     # Save the embeddings
     # Get the embeddings from the last batch in the training data (or choose any specific data you wish)
