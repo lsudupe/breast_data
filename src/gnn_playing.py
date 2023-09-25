@@ -160,20 +160,3 @@ for model_type in model_type_list:
 
     torch.save(model_metrics, os.path.join(metrics_dir, 'metrics.pt'))
 
-    # Plotting training progress
-    plt.figure(figsize=(10, 6))
-    plt.plot(range(1, 50), train_accuracies, label='Train Accuracy', color='blue', marker='o')
-    plt.plot(range(1, 50), test_accuracies, label='Test Accuracy', color='red', marker='o')
-    plt.title(f'{model_type.upper()} Training and Testing Accuracy Over Epochs')
-    plt.xlabel('Epochs')
-    plt.ylabel('Accuracy')
-    plt.legend()
-    plt.grid(True)
-    plt.tight_layout()
-
-    plots_dir = f"/ibex/scratch/medinils/breast_data/results/{model_type.upper()}/plots"
-    if not os.path.exists(plots_dir):
-        os.makedirs(plots_dir)
-
-    plt.savefig(os.path.join(plots_dir, "accuracy_over_epochs.pdf"))
-    plt.show()
