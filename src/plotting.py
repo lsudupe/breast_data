@@ -23,6 +23,7 @@ if not os.path.exists(plots_dir):
 plt.figure(figsize=(10, 6))
 for model_type in model_type_list:
     plt.plot(all_metrics[model_type]['accuracy_test'], label=model_type.upper())
+    plt.plot(all_metrics[model_type]['accuracy_train'], '--', label=f"Train {model_type.upper()}")
 
 plt.title('Test Accuracy Over Epochs')
 plt.xlabel('Epochs')
