@@ -88,21 +88,21 @@ def test(model, loader):
 
 ## lets evaluate the three models
 
-## model metrics
-model_metrics = {
-    'accuracy_train': [],
-    'accuracy_test' : [],
-    'f1' : [],
-    'precision' : [],
-    'recall' : [],
-    'train_loss' : [],
-    'time_per_epoch' : [],
-    'memory_usage': []
-}
 ## list of models
 model_type_list = ['gcn', 'gat', 'graphsage']
 
 for model_type in model_type_list:
+    ## model metrics
+    model_metrics = {
+        'accuracy_train': [],
+        'accuracy_test': [],
+        'f1': [],
+        'precision': [],
+        'recall': [],
+        'train_loss': [],
+        'time_per_epoch': [],
+        'memory_usage': []
+    }
     # Initialize model, optimizer, criterion
     model = GNN(dataset=datasetLaura, hidden_channels=64, conv_type=model_type)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
