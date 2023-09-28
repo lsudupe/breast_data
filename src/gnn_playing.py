@@ -14,6 +14,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 from torch_geometric.loader import DataLoader
 from src.models.custom_dataset import BreastData
 from src.models.GNN import GNN
+from sklearn.metrics import f1_score, precision_score, recall_score, roc_auc_score
 
 ## read dataset
 datasetLaura = BreastData(root="/ibex/scratch/medinils/breast_data/data/process/")
@@ -101,7 +102,8 @@ for model_type in model_type_list:
         'recall': [],
         'train_loss': [],
         'time_per_epoch': [],
-        'memory_usage': []
+        'memory_usage': [],
+        'auc': []
     }
     # Initialize model, optimizer, criterion
     model = GNN(dataset=datasetLaura, hidden_channels=64, conv_type=model_type)
@@ -134,11 +136,15 @@ for model_type in model_type_list:
         prec = precision_score(labels, pred, average='macro')
         recall = recall_score(labels, pred, average='macro')
 
+        # Compute AUC
+        auc = roc_auc_score(labels, probabilities)
+
         model_metrics['f1'].append(f1)
         model_metrics['precision'].append(prec)
         model_metrics['recall'].append(recall)
         model_metrics['accuracy_train'].append(train_acc)
         model_metrics['accuracy_test'].append(test_acc)
+        model_metrics['auc'].append(auc)
 
     # Save the embeddings
     # Get the embeddings from the last batch in the training data (or choose any specific data you wish)
