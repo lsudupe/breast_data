@@ -125,3 +125,19 @@ plt.tight_layout()
 plt.savefig(os.path.join(plots_dir, "memory_usage_over_epochs.pdf"))
 plt.show()
 
+# Plot AUC for all models
+plt.figure(figsize=(10, 6))
+for model_type in model_type_list:
+    plt.plot(all_metrics[model_type]['auc'], label=model_type.upper())
+
+plt.title('AUC Over Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('AUC')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+plots_dir = "/path/to/your/plots/directory"  # Make sure to set this to your actual directory
+plt.savefig(os.path.join(plots_dir, "auc_over_epochs.pdf"))
+plt.show()
+
